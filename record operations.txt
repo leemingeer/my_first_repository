@@ -13,7 +13,8 @@
   git push origin master
 6. 刷新github上可以看到上传的文件，commit数目显示了有多少次成功递交
 
-Note: 
+Note:
+1.  
 git commit -a 命令a stands for all, 是在本地递交中已经add过放到暂存区，但是又修改了，此时可以git commit -a 来提交而不必在单独add这个文件，其实本质是git add 和git commit -m
 git commit --amend 修改上一次的提交信息，就是需要手动填写的信息，因为要求每次commit的信息都不一样，通常这个空格就好了
 
@@ -22,3 +23,12 @@ window 删掉文件
 git rm test*
 如果手动删除了，则可以git add --all| A
 git commit等递交流程
+
+2.不能上传超100M的文件
+git push origin master 提示 read from socket failed: connection reset by peer
+ 
+ git -T git@github.com  连接成功
+ git config remote.origin.url git@github.com:leemingeer/my_first_repository
+ 再推
+ 
+3.git clone 会自动在当前目录下创建项目的文件夹，想的很周到
