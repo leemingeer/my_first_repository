@@ -1,0 +1,24 @@
+
+ 1.github建立新repo
+2.本地创建文件夹，git init来初始化该文件，又git工具管理，具体表现是多出.git 隐藏文件夹
+3.配置本地git commit的时候需要的提交信息，来确定递交身份，可能具体到公司会有commit的名单，比如emial 必须是公司的email域名.user.name必须是jira账户， --global确定该身份可用于多个repo的commit身份
+  git config --global user.email "leemingeer@gmail.com"
+  git config --global user.name "leemingeer"
+4.local仓库与github仓库关联起来，
+   git remote add origin https://github.com/leemingeer/my_first_repository.git
+5.下面可以递交流程了
+   git add .
+   git commit -m "my first commit message for testing"
+   git pull origin master   表明是远端的master分支上，因为初次远端会有README.md文件，所以本地需要先同步下    remote，否则会push rejected
+  git push origin master
+6. 刷新github上可以看到上传的文件，commit数目显示了有多少次成功递交
+
+Note: 
+git commit -a 命令a stands for all, 是在本地递交中已经add过放到暂存区，但是又修改了，此时可以git commit -a 来提交而不必在单独add这个文件，其实本质是git add 和git commit -m
+git commit --amend 修改上一次的提交信息，就是需要手动填写的信息，因为要求每次commit的信息都不一样，通常这个空格就好了
+
+本地删掉文件动作也要commit到orign
+window 删掉文件
+git rm test*
+如果手动删除了，则可以git add --all| A
+git commit等递交流程
